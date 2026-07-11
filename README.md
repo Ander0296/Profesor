@@ -10,8 +10,8 @@ explica en español, mantiene la guía (GUIA-UML.md) y crea ejercicios
 Cada paso dice dónde va. Los MENSAJES están al final del archivo.
 
 ## Carpetas
-- paginas/         → acá dejo los pantallazos de hoy (el nombre da igual)
-- paginas/leidas/  → Claude archiva acá los ya estudiados (lo hace él)
+- paginas/         → acá dejo la tanda actual (3-5 pantallazos por vez)
+- paginas/leidas/  → Claude archiva acá los ya explicados (lo hace él)
 - ejercicios/      → mi código Java, una carpeta por ejercicio
 - diagramas/       → mis diagramas .puml
 - GUIA-UML.md      → la guía (la escribe Claude)
@@ -22,15 +22,17 @@ PRIMERA VEZ EN LA VIDA (sesión uml-s01)
 ============================================================
 1.  [TERMINAL]  cd ~/Proyectos/UML-Java
 2.  [TERMINAL]  mkdir -p paginas/leidas
-3.  [TERMINAL]  pasá 3-5 pantallazos del libro a paginas/
+3.  [TERMINAL]  pasá la primera tanda (3-5 pantallazos) a paginas/
 4.  [TERMINAL]  claude
 5.  [CLAUDE]    /rename uml-s01
 6.  [CLAUDE]    /mcp        → engram tiene que decir "connected"
 7.  [CLAUDE]    pegá el MENSAJE 1
 8.  [CLAUDE]    cuando responda "listo", pegá el MENSAJE 3
-9.  Estudiá. Frená con dudas todas las veces que quieras.
-10. [CLAUDE]    al terminar, pegá el MENSAJE 5
-                (si pide permiso para mover imágenes → aceptá)
+                (la primera vez pide permiso para mover imágenes → aceptá)
+9.  ¿Querés seguir estudiando? → pasá la siguiente tanda de 3-5 a
+    paginas/ (desde el explorador, sin cerrar Claude) y pegá el
+    MENSAJE 3 otra vez. Repetí las veces que quieras.
+10. [CLAUDE]    al terminar el día, pegá el MENSAJE 5
 11. [CLAUDE]    salí con Ctrl+D
 12. [TERMINAL]  engram search "tema de hoy" --project UML-Java
                 → si aparece algo, se guardó bien. Fin del día.
@@ -38,35 +40,41 @@ PRIMERA VEZ EN LA VIDA (sesión uml-s01)
 ============================================================
 CADA DÍA DE ESTUDIO (uml-s02, s03, ...)
 ============================================================
-1.  [TERMINAL]  si hoy toca tanda nueva: pasá los pantallazos a paginas/
+1.  [TERMINAL]  pasá la primera tanda (3-5 pantallazos) a paginas/
 2.  [TERMINAL]  cd ~/Proyectos/UML-Java
 3.  [TERMINAL]  claude
 4.  [CLAUDE]    /rename uml-sNN     ← el número que sigue (s02, s03...)
 5.  [CLAUDE]    /mcp                → engram "connected"
 6.  [CLAUDE]    pegá el MENSAJE 2   → te dice dónde quedamos y qué toca
-7.  Según lo que toque hoy:
-    - hice un ejercicio pendiente  → pegá el MENSAJE 4
-    - toca tanda nueva de páginas  → pegá el MENSAJE 3
-8.  [CLAUDE]    al terminar, pegá el MENSAJE 5
-9.  [CLAUDE]    Ctrl+D
-10. [TERMINAL]  engram search "tema de hoy" --project UML-Java
-11. [TERMINAL]  (opcional) git add . && git commit -m "sesión sNN"
+7.  [CLAUDE]    si hay ejercicios pendientes y ya hiciste alguno:
+                pegá el MENSAJE 4 ANTES de pasar a páginas nuevas
+8.  [CLAUDE]    pegá el MENSAJE 3   → explica la tanda y la archiva solo
+9.  ¿Querés seguir? → siguiente tanda de 3-5 a paginas/ y volvé al
+    paso 8. Cuántas veces lo repitas lo decidís vos cada día: puede
+    ser una tanda o pueden ser muchas. No hay número fijo.
+10. [CLAUDE]    al terminar el día, pegá el MENSAJE 5
+11. [CLAUDE]    Ctrl+D
+12. [TERMINAL]  engram search "tema de hoy" --project UML-Java
+13. [TERMINAL]  (opcional) git add . && git commit -m "sesión sNN"
 
 ============================================================
 SI SE CERRÓ LA TERMINAL SIN QUERER (mismo día)
 ============================================================
 [TERMINAL]  claude --resume uml-sNN
 (o `claude --resume` solo, y elegís de la lista)
-OJO: esto es SOLO para el mismo día. Día nuevo = sesión nueva.
+OJO: esto es SOLO para retomar el mismo día. Día nuevo = sesión nueva.
 
 ============================================================
 REGLAS DE ORO
 ============================================================
-1. Una sesión por día de estudio. Día nuevo = número nuevo.
-2. Una sesión = 1 ejercicio corregido (si hay) + 1 tanda nueva. No más.
+1. Normalmente una sesión por día. El número solo avanza: si un día
+   abrís dos sesiones, no pasa nada.
+2. Cada tanda: 3-5 imágenes MÁXIMO. La cantidad de tandas por día es
+   libre — la decido yo según el día.
 3. NUNCA salir sin pegar el MENSAJE 5: es lo que guarda todo.
-4. Si Claude empieza a olvidar cosas dichas en la conversación:
-   terminá lo que estés haciendo, MENSAJE 5, y sesión nueva.
+4. En días largos: si Claude empieza a olvidar cosas dichas antes o
+   se pone lento, terminá la tanda en curso, pegá el MENSAJE 5, Ctrl+D,
+   y seguí en una sesión nueva (número siguiente, mismo día).
 
 ============================================================
 MENSAJES PARA COPIAR Y PEGAR
@@ -100,10 +108,12 @@ FLUJO POR CADA TANDA DE PÁGINAS (máx. 3-5 imágenes que dejo en paginas/)
    archivo, y sumá los términos nuevos a la tabla de vocabulario.
 5. EJERCICIOS: cuando el tema lo amerite, agregá ejercicios a EJERCICIOS.md
    con su formato (número, tema, tipo, enunciado claro, dónde entrego, y
-   "Si te trabás: revisá la Sesión #Y"). Máximo 2-3 nuevos por sesión:
-   los hago de a uno por día.
+   "Si te trabás: revisá la Sesión #Y"). Los hago de a uno por día.
 6. ENGRAM: guardá en Engram (project "UML-Java") los conceptos clave, las
    decisiones y en qué página quedamos.
+
+NOTA: en un mismo día puedo pasarte varias tandas seguidas (yo decido
+cuántas). Cada tanda repite este flujo completo desde el paso 1.
 
 REGLAS FIJAS
 - Yo escribo TODO el código Java a mano en ejercicios/. Vos no creás ni
@@ -132,11 +142,14 @@ en Engram (project "UML-Java") dónde quedamos, y decime: (1) qué vimos la
 hoy. Después decido si corregimos un ejercicio o te paso la siguiente tanda.
 ```
 
---- MENSAJE 3 — tanda de páginas ---
+--- MENSAJE 3 — tanda de páginas (repetible: una vez por cada tanda) ---
 
 ```
-Tanda de hoy: leé todas las imágenes que hay en la raíz de paginas/
+Tanda nueva: leé todas las imágenes que hay en la raíz de paginas/
 (sin entrar a paginas/leidas/), en orden de nombre, y arrancá el flujo.
+Cuando termines de explicarme esta tanda, antes de seguir con cualquier
+otra cosa, mové esas mismas imágenes a paginas/leidas/ para que la raíz
+quede vacía.
 ```
 
 --- MENSAJE 4 — corregir un ejercicio ---
@@ -155,6 +168,5 @@ Cerramos acá:
    todo lo de hoy.
 2. Guardá en Engram (project "UML-Java") el resumen y en qué página
    quedamos.
-3. Mové todas las imágenes de la raíz de paginas/ a paginas/leidas/.
-4. Dame el resumen final de la sesión.
+3. Dame el resumen final de la sesión.
 ```
