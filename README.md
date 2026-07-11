@@ -1,20 +1,160 @@
-# uml-java — estudio de UML Distilled + POO en Java
+# UML-Java — estudio de UML Distilled + POO en Java
 
-Proyecto de aprendizaje con Claude Code como profesor particular.
-Objetivo: entender "UML Distilled" (Martin Fowler) en español, aprender
-POO en Java en paralelo, y practicar con ejercicios diarios hasta poder
-diseñar y escribir código bien estructurado.
+Claude Code es mi profesor. Yo le paso pantallazos del libro, él me los
+explica en español, mantiene la guía (GUIA-UML.md) y crea ejercicios
+(EJERCICIOS.md). Yo escribo todo el código Java a mano.
 
-## Estructura
-- CLAUDE.md      reglas del proyecto (las lee Claude Code al abrir)
-- GUIA-UML.md    guía por sesiones (la mantiene Claude)
-- EJERCICIOS.md  ejercicios con estado (los crea y corrige Claude)
-- paginas/       fotos del libro (excluidas de git)
-- ejercicios/    mi código Java, una carpeta por ejercicio
-- diagramas/     mis diagramas PlantUML (.puml)
+## Los dos lugares donde se escriben cosas
+- [TERMINAL] = la consola de siempre (fish)
+- [CLAUDE]   = dentro del programa, después de escribir `claude`
+Cada paso dice dónde va. Los MENSAJES están al final del archivo.
 
-## Cómo se estudia (un día tipo)
-1. Corrijo con Claude UN ejercicio pendiente de EJERCICIOS.md
-2. Fotos de la siguiente tanda (3-5 páginas) a paginas/
-3. `claude` desde esta carpeta, sesión nueva por día de estudio
-4. Claude explica, actualiza la guía y crea ejercicios nuevos
+## Carpetas
+- paginas/         → acá dejo los pantallazos de hoy (el nombre da igual)
+- paginas/leidas/  → Claude archiva acá los ya estudiados (lo hace él)
+- ejercicios/      → mi código Java, una carpeta por ejercicio
+- diagramas/       → mis diagramas .puml
+- GUIA-UML.md      → la guía (la escribe Claude)
+- EJERCICIOS.md    → los ejercicios (los escribe Claude)
+
+============================================================
+PRIMERA VEZ EN LA VIDA (sesión uml-s01)
+============================================================
+1.  [TERMINAL]  cd ~/Proyectos/UML-Java
+2.  [TERMINAL]  mkdir -p paginas/leidas
+3.  [TERMINAL]  pasá 3-5 pantallazos del libro a paginas/
+4.  [TERMINAL]  claude
+5.  [CLAUDE]    /rename uml-s01
+6.  [CLAUDE]    /mcp        → engram tiene que decir "connected"
+7.  [CLAUDE]    pegá el MENSAJE 1
+8.  [CLAUDE]    cuando responda "listo", pegá el MENSAJE 3
+9.  Estudiá. Frená con dudas todas las veces que quieras.
+10. [CLAUDE]    al terminar, pegá el MENSAJE 5
+                (si pide permiso para mover imágenes → aceptá)
+11. [CLAUDE]    salí con Ctrl+D
+12. [TERMINAL]  engram search "tema de hoy" --project UML-Java
+                → si aparece algo, se guardó bien. Fin del día.
+
+============================================================
+CADA DÍA DE ESTUDIO (uml-s02, s03, ...)
+============================================================
+1.  [TERMINAL]  si hoy toca tanda nueva: pasá los pantallazos a paginas/
+2.  [TERMINAL]  cd ~/Proyectos/UML-Java
+3.  [TERMINAL]  claude
+4.  [CLAUDE]    /rename uml-sNN     ← el número que sigue (s02, s03...)
+5.  [CLAUDE]    /mcp                → engram "connected"
+6.  [CLAUDE]    pegá el MENSAJE 2   → te dice dónde quedamos y qué toca
+7.  Según lo que toque hoy:
+    - hice un ejercicio pendiente  → pegá el MENSAJE 4
+    - toca tanda nueva de páginas  → pegá el MENSAJE 3
+8.  [CLAUDE]    al terminar, pegá el MENSAJE 5
+9.  [CLAUDE]    Ctrl+D
+10. [TERMINAL]  engram search "tema de hoy" --project UML-Java
+11. [TERMINAL]  (opcional) git add . && git commit -m "sesión sNN"
+
+============================================================
+SI SE CERRÓ LA TERMINAL SIN QUERER (mismo día)
+============================================================
+[TERMINAL]  claude --resume uml-sNN
+(o `claude --resume` solo, y elegís de la lista)
+OJO: esto es SOLO para el mismo día. Día nuevo = sesión nueva.
+
+============================================================
+REGLAS DE ORO
+============================================================
+1. Una sesión por día de estudio. Día nuevo = número nuevo.
+2. Una sesión = 1 ejercicio corregido (si hay) + 1 tanda nueva. No más.
+3. NUNCA salir sin pegar el MENSAJE 5: es lo que guarda todo.
+4. Si Claude empieza a olvidar cosas dichas en la conversación:
+   terminá lo que estés haciendo, MENSAJE 5, y sesión nueva.
+
+============================================================
+MENSAJES PARA COPIAR Y PEGAR
+============================================================
+
+--- MENSAJE 1 — inicial (solo en uml-s01) ---
+
+```
+Este es un proyecto de estudio y vos sos mi profesor particular.
+
+QUIÉN SOY
+- Novato total en POO/Java y novato total en UML. No asumas nada.
+- Objetivo: escribir código bien estructurado y conseguir mi primer empleo
+  como desarrollador.
+- El libro es "UML Distilled" (Martin Fowler, 3ra ed.) en inglés; yo leo
+  mejor en español.
+
+FLUJO POR CADA TANDA DE PÁGINAS (máx. 3-5 imágenes que dejo en paginas/)
+1. TRADUCCIÓN EXPLICADA: contame en español TODO lo que dicen esas páginas,
+   con tus palabras, reordenado para un novato, sin saltarte ningún
+   concepto. No es traducción literal del libro: es una explicación
+   completa con tus propios ejemplos. Los términos técnicos clave dejalos
+   también en inglés entre paréntesis (los necesito para entrevistas).
+2. UML <-> JAVA: conectá cada concepto con Java mostrando el ejemplo mínimo
+   de código EN EL CHAT, con comentario // en cada línea relevante. Si el
+   tema necesita una base de Java que no vimos (interfaces, herencia,
+   colecciones...), frená y explicá esa base primero, con analogías.
+3. COMPRENSIÓN: antes de cerrar, haceme 1-2 preguntas cortas para verificar
+   que entendí. Si respondo mal, explicalo de otra forma.
+4. GUÍA: actualizá GUIA-UML.md agregando la sesión con el formato del
+   archivo, y sumá los términos nuevos a la tabla de vocabulario.
+5. EJERCICIOS: cuando el tema lo amerite, agregá ejercicios a EJERCICIOS.md
+   con su formato (número, tema, tipo, enunciado claro, dónde entrego, y
+   "Si te trabás: revisá la Sesión #Y"). Máximo 2-3 nuevos por sesión:
+   los hago de a uno por día.
+6. ENGRAM: guardá en Engram (project "UML-Java") los conceptos clave, las
+   decisiones y en qué página quedamos.
+
+REGLAS FIJAS
+- Yo escribo TODO el código Java a mano en ejercicios/. Vos no creás ni
+  editás archivos .java: mostrás ejemplos en el chat y corregís lo mío.
+- SÍ podés editar directamente GUIA-UML.md y EJERCICIOS.md.
+- No ejecutes bash salvo que te lo pida explícitamente.
+- Puedo frenarte en cualquier momento con una duda: resolvela con calma y
+  detalle antes de seguir.
+- Si hay algo importante que el libro no dice pero debería saber (buenas
+  prácticas, cómo se usa en el trabajo real), decímelo y anotalo en la
+  guía como "NOTA DEL PROFE".
+
+ARRANQUE DE HOY
+1. Leé CLAUDE.md, GUIA-UML.md y EJERCICIOS.md.
+2. Buscá en Engram (project "UML-Java") si hay progreso previo.
+3. Confirmame en una línea qué encontraste y decime "listo para la primera
+   tanda".
+```
+
+--- MENSAJE 2 — arranque del día (s02 en adelante) ---
+
+```
+Nueva sesión de estudio. Leé CLAUDE.md, GUIA-UML.md y EJERCICIOS.md, buscá
+en Engram (project "UML-Java") dónde quedamos, y decime: (1) qué vimos la
+última vez en una línea, (2) qué ejercicios tengo pendientes, (3) qué toca
+hoy. Después decido si corregimos un ejercicio o te paso la siguiente tanda.
+```
+
+--- MENSAJE 3 — tanda de páginas ---
+
+```
+Tanda de hoy: leé todas las imágenes que hay en la raíz de paginas/
+(sin entrar a paginas/leidas/), en orden de nombre, y arrancá el flujo.
+```
+
+--- MENSAJE 4 — corregir un ejercicio ---
+
+```
+Hice el ejercicio #NN, está en ejercicios/ejNN-nombre/. Revisalo línea por
+línea: qué está bien, qué está mal y POR QUÉ, y actualizá su estado y tu
+corrección en EJERCICIOS.md.
+```
+
+--- MENSAJE 5 — cierre (SIEMPRE antes de salir) ---
+
+```
+Cerramos acá:
+1. Verificá que GUIA-UML.md y EJERCICIOS.md quedaron actualizados con
+   todo lo de hoy.
+2. Guardá en Engram (project "UML-Java") el resumen y en qué página
+   quedamos.
+3. Mové todas las imágenes de la raíz de paginas/ a paginas/leidas/.
+4. Dame el resumen final de la sesión.
+```
