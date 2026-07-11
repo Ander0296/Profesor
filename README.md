@@ -170,3 +170,57 @@ Cerramos acá:
    quedamos.
 3. Dame el resumen final de la sesión.
 ```
+
+============================================================
+GITHUB — USAR EL PROYECTO EN CUALQUIER PC MÍO
+============================================================
+Repo: https://github.com/Ander0296/Profesor (ya conectado desde el
+PC principal). Regla: GitHub tiene la versión oficial. Cada PC BAJA
+antes de estudiar (pull) y SUBE al terminar (push). Siempre.
+
+--- EN UN PC NUEVO (solo la primera vez en ese PC) ---
+1.  Requisitos: ese PC necesita git + Claude Code + gentle-ai + Engram
+    instalados, igual que el principal (gentle-ai doctor en ok).
+2.  [TERMINAL]  decirle a git quién soy (una vez por PC):
+    git config --global user.name "Ander0296"
+    git config --global user.email "el-email-de-mi-cuenta-GitHub"
+3.  [TERMINAL]  conectar ese PC con mi cuenta de GitHub (una vez):
+    - Si ese PC tiene 1Password con mi llave SSH → no hago nada extra.
+    - Si no: instalo GitHub CLI y corro:  gh auth login
+      (elegir: GitHub.com → HTTPS → Login with a web browser)
+4.  [TERMINAL]  mkdir -p ~/Proyectos
+5.  [TERMINAL]  cd ~/Proyectos
+6.  [TERMINAL]  clonar — OJO al "UML-Java" del final, es OBLIGATORIO:
+    - con 1Password/SSH:
+      git clone git@github.com:Ander0296/Profesor.git UML-Java
+    - con gh/HTTPS:
+      git clone https://github.com/Ander0296/Profesor.git UML-Java
+    ¿Por qué? El repo en GitHub se llama "Profesor". Sin ese UML-Java
+    al final, la carpeta se llamaría "Profesor", Engram usaría
+    "Profesor" como project, y la memoria dejaría de coincidir.
+7.  [TERMINAL]  cd UML-Java
+8.  [TERMINAL]  mkdir -p paginas/leidas ejercicios diagramas
+    (git NO guarda carpetas vacías, y paginas/ está en .gitignore:
+    por eso al clonar no aparecen y se crean a mano una sola vez)
+9.  Listo. De acá en adelante, flujo normal de "CADA DÍA DE ESTUDIO".
+
+--- CADA DÍA, EN CUALQUIER PC ---
+ANTES de abrir claude:
+    git pull
+AL FINAL (después del engram search):
+    git add -A && git commit -m "sesión sNN" && git push
+
+--- NOTAS ---
+- Engram NO viaja por GitHub: vive en ~/.engram de CADA PC. Lo que
+  viaja es GUIA-UML.md y EJERCICIOS.md, y con eso alcanza: el
+  MENSAJE 2 lee la guía. Si en un PC Engram dice "no encontré nada
+  previo", es normal — la guía es la memoria oficial.
+- Los permisos de Claude (editar la guía, mover imágenes) se piden
+  de nuevo una vez en cada PC: aceptar como la primera vez.
+- Si un día olvidé hacer push en un PC: primero push allá, después
+  pull en el otro. Nunca estudiar sobre una copia vieja.
+- El repo es PÚBLICO: cualquiera puede ver la guía y los ejercicios
+  (los pantallazos del libro NO se suben, los frena .gitignore).
+  Para hacerlo privado: Settings del repo → Danger Zone → Change
+  visibility.
+============================================================
