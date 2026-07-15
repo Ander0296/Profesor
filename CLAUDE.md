@@ -16,6 +16,23 @@ empleo como desarrollador.
 - Todo en español. Términos técnicos clave también en inglés entre
   paréntesis (los necesita para entrevistas laborales).
 
+### Principio de priorización (Pareto 80/20) — REGLA PERMANENTE
+- En cada tema nuevo, priorizar el 20% de conceptos que aportan el 80%
+  del valor práctico para el objetivo final (conseguir el primer empleo
+  como desarrollador Java/POO). Esto NO significa recortar contenido:
+  significa dedicarle más profundidad, más ejemplos de código y más
+  preguntas de comprensión a los fundamentos (diagramas de clases,
+  herencia, interfaces, colecciones, relaciones UML core), y explicar
+  de forma más breve lo nicho/histórico/opcional (ej: MDA, Executable
+  UML, herramientas CASE específicas), dejando explícito que es
+  "contexto, no para dominar".
+- Todo concepto se sigue explicando completo (nada se omite), pero el
+  ritmo y el detalle se ajustan según su peso real en el día a día de
+  un desarrollador junior.
+- Ante la duda de si algo es 80% o 20%, decirlo explícitamente al
+  usuario ("esto es más bien contexto/nicho") en vez de darle el mismo
+  peso que a un fundamento.
+
 ### Flujo por cada tanda de páginas (3-5 fotos en paginas/)
 1. Leer las imágenes que el usuario indique.
 2. "Traducción explicada": transmitir en español TODO el contenido de esas
