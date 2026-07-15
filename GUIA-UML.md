@@ -6,9 +6,9 @@ español y conectadas con código Java. Ejercicios: ver EJERCICIOS.md.
 
 INICIO RÁPIDO
 ------------------------------------------------------------
-- Última página estudiada: Ubicación 553 de 3171 (15%) — fin de "Ways of Using the UML" + MDA + Executable UML
-- Última sesión: #05
-- Ejercicios pendientes: ver EJERCICIOS.md (ninguno todavía — contenido introductorio, sin conceptos de diagramas aún)
+- Última página estudiada: Ubicación 730 de 3171 (23%) — legal UML, supresión, significado de UML, "UML no alcanza" (Figura 1.3)
+- Última sesión: #09
+- Ejercicios pendientes: ver EJERCICIOS.md — EJERCICIO #01 (screen flow diagram) pendiente
 
 VOCABULARIO EN <-> ES (Claude agrega una fila por término nuevo)
 ------------------------------------------------------------
@@ -31,6 +31,17 @@ VOCABULARIO EN <-> ES (Claude agrega una fila por término nuevo)
 | Platform Independent Model (PIM)| PIM                              | Modelo UML sin depender de ninguna tecnología concreta.             |
 | Platform Specific Model (PSM)  | PSM                               | Modelo dirigido a un entorno de ejecución específico (ej. J2EE).    |
 | Executable UML                 | Executable UML                    | Variante de MDA: un model compiler pasa el modelo a sistema en un paso.|
+| archetype                      | arquetipo                         | Regla que le dice al model compiler cómo llevar el modelo a una plataforma concreta.|
+| software perspective           | perspectiva de software           | Los elementos del diagrama mapean casi directo a elementos de un sistema real.|
+| conceptual perspective         | perspectiva conceptual            | El diagrama describe conceptos de un dominio, sin pensar en software.|
+| notation                       | notación                          | La sintaxis gráfica de UML: cómo se dibuja cada símbolo.            |
+| Three Amigos                   | Los Tres Amigos                   | Booch, Rumbaugh y Jacobson; los más asociados a la creación de UML. |
+| Structure Diagram              | Diagrama de Estructura            | Familia de diagramas UML que muestra QUÉ existe (clases, paquetes, etc.).|
+| Behavior Diagram               | Diagrama de Comportamiento        | Familia de diagramas UML que muestra QUÉ HACE el sistema.           |
+| prescriptive rules             | reglas prescriptivas              | Un organismo oficial dicta qué es legal (ej. lenguajes de programación).|
+| descriptive rules              | reglas descriptivas               | Las reglas se entienden por cómo la gente usa el lenguaje en la práctica.|
+| suppression                    | supresión                         | Un diagrama puede ocultar info a propósito; ausencia no implica nada.|
+| normative / non-normative       | normativo / no normativo          | Normative = obligatorio según el estándar; non-normative = no es estrictamente legal en UML.|
 
 ============================================================
 SESIÓN #01 — 2026-07-11 — Prólogo 3ra edición (Cris Kobryn) (Ubicación 332-358, 6-7%)
@@ -213,6 +224,253 @@ DUDAS QUE SURGIERON (y su respuesta corta)
 
 EJERCICIOS CREADOS: ninguno todavía
 PRÓXIMO PASO: seguir Capítulo 1 — próximos temas de la introducción.
+
+============================================================
+SESIÓN #06 — 2026-07-15 — Detalle MDA/Executable UML + perspectivas + arranca "How We Got to the UML" (Ubicación 550-596, 15-17%)
+============================================================
+
+IDEAS CLAVE
+- MDA en detalle: PIM único -> PSM por plataforma (vía herramientas de
+  vendors) -> código. Si TODO el proceso es automático = UML as
+  programming language; si algún paso es manual = blueprint.
+- Executable UML en detalle: un Model Compiler va directo del modelo
+  (equivalente al PIM) a un sistema desplegable, en un paso 100%
+  automático, salteando el PSM. Se basa en archetypes: reglas que le
+  dicen al compiler cómo llevar el modelo a una plataforma concreta
+  (ej. comprás un compiler + archetypes J2EE y .NET).
+- Fowler es escéptico de "UML as programming language" en la práctica:
+  duda de madurez de herramientas y, sobre todo, de que lo gráfico sea
+  más productivo que lo textual. Compara con Smalltalk (muy productivo
+  pero nunca llegó a masa crítica, quedó nicho) — teme el mismo destino.
+- UML 2 tiene tres formas de behavioral modeling (interaction, state,
+  activity diagrams) — solo mencionadas, todavía sin detalle.
+- Perspectiva de software vs. perspectiva conceptual: en la de software
+  los elementos del diagrama mapean casi directo a elementos de un
+  sistema real que se va a programar; en la conceptual el diagrama
+  describe conceptos de un dominio, sin pensar en software. Es un
+  espectro, no una regla estricta.
+- "Esencia de UML": para la mayoría (usuarios de sketch) son los
+  diagramas; para los creadores de UML, la esencia es el meta-modelo y
+  los diagramas son solo su presentación.
+- Fowler declara su sesgo: usa UML casi siempre como sketch, es
+  escéptico de blueprints forward-engineered detallados (frenan el
+  desarrollo) y considera que el valor de un blueprint reverse-engineered
+  depende de si la herramienta es navegable o solo genera un documento
+  estático ("mata árboles").
+- Arranca sección nueva "How We Got to the UML" (historia) — todavía
+  sin contenido, solo el título.
+
+UML <-> JAVA (cómo se ve cada concepto en código)
+- Perspectiva de software: una clase "Cuenta" en el diagrama mapea casi
+  1 a 1 a una clase Java `Cuenta` con sus atributos y métodos.
+- Perspectiva conceptual: el mismo nombre "Cuenta" puede aparecer en un
+  diagrama solo para acordar qué significa el término en un dominio de
+  negocio, sin que eso implique ninguna clase Java concreta.
+
+NOTA DEL PROFE (cosas que el libro no dice pero importan)
+- La distinción software/conceptual perspective es más relevante en el
+  día a día que MDA/Executable UML: te ayuda a leer un diagrama ajeno y
+  saber si te está mostrando "así va a ser el código" o "así entendemos
+  el negocio". El resto de esta sesión (MDA, Executable UML, esencia
+  del UML) es contexto/nicho — no hace falta memorizarlo.
+
+DUDAS QUE SURGIERON (y su respuesta corta)
+- Ninguna — ambas respuestas de verificación fueron correctas. Se afinó
+  el criterio de la primera: lo que define "perspectiva de software" no
+  es que el diagrama mencione el lenguaje de programación, sino que sus
+  elementos mapeen directo a elementos de un sistema real.
+
+EJERCICIOS CREADOS: ninguno todavía (sigue siendo contenido conceptual,
+sin notación de diagramas)
+PRÓXIMO PASO: seguir "How We Got to the UML" (historia de UML).
+
+============================================================
+SESIÓN #07 — 2026-07-15 — Historia real de UML (Three Amigos, OMG) + notación vs. meta-modelo + Figura 1.1 (Ubicación 616-657, 18-20%)
+============================================================
+
+IDEAS CLAVE
+- Historia (contexto/nicho, buen dato de entrevista): en los 80 los
+  objetos salen del laboratorio al mundo real (Smalltalk se estabiliza,
+  nace C++). Entre 1988-1992 aparecen los libros clave de modelado OO
+  gráfico: Booch, Coad, Jacobson (Objectory/OOSE), Odell, Rumbaugh
+  (OMT), Shlaer & Mellor, Wirfs-Brock (Responsibility Driven Design).
+  Métodos muy parecidos en concepto pero con notaciones distintas ->
+  confusión real en los equipos.
+- Evento cataclísmico: Jim Rumbaugh deja GE y se une a Grady Booch en
+  Rational -> "Unified Method" v0.8 (OOPSLA '95). Rational compra la
+  empresa de Ivar Jacobson -> se completan "los Tres Amigos" (Booch,
+  Rumbaugh, Jacobson).
+- Lo que metió al OMG en el tema NO fueron los metodólogos rivales:
+  fueron los FABRICANTES DE HERRAMIENTAS CASE, con miedo a que un
+  estándar controlado por Rational les diera ventaja desleal. Bandera:
+  "interoperabilidad entre herramientas CASE".
+- 1997: Rational presenta v1.0 de la documentación UML; el OMG adopta
+  la v1.1 como estándar oficial. Revisiones: 1.2 cosmética, 1.3 más
+  significativa, 1.4 agrega detalle de componentes/profiles, 1.5 agrega
+  action semantics.
+- Fowler opina que darle TODO el crédito a los "Tres Amigos" es algo
+  injusto: la notación nació en el método unificado Booch/Rumbaugh,
+  pero después el trabajo real lo empujaron los comités del OMG (de
+  los tres, solo Rumbaugh se mantuvo comprometido en esa etapa).
+- Notación vs. meta-modelo (NÚCLEO): la notación es la parte gráfica
+  (cómo se dibuja cada símbolo); el meta-modelo son las reglas de fondo
+  que definen con precisión qué ES cada concepto (clase, asociación,
+  multiplicidad). El meta-modelo de UML es, generalmente, un diagrama
+  de clases que describe los propios conceptos de UML (UML
+  describiéndose a sí mismo).
+- La mayoría de lenguajes gráficos de modelado tienen poco rigor formal
+  (apelan a la intuición) y eso no es un problema — lo que importa es
+  que sean útiles, no que sean matemáticamente exactos como en los
+  métodos formales (predicate calculus).
+- Figura 1.1: fragmento del meta-modelo de UML (Feature -> Structural
+  Feature / Behavioral Feature, con Behavioral Feature relacionado a
+  Parameter). Es solo un preview visual — el propio Fowler dice que no
+  lo va a explicar acá; la lección completa de diagramas de clases
+  viene en el próximo capítulo.
+
+UML <-> JAVA (cómo se ve cada concepto en código)
+- Feature = cualquier miembro de una clase Java. Structural Feature =
+  atributo (campo). Behavioral Feature = método. Parameter = cada
+  parámetro del método. `{ordered}` = el ORDEN POSICIONAL de los
+  parámetros en la firma importa (saludar(String, int) != saludar(int,
+  String)) — no tiene que ver con el orden de ejecución de acciones
+  dentro del método.
+
+NOTA DEL PROFE (cosas que el libro no dice pero importan)
+- La historia (Three Amigos, versiones 1.0-1.5) es trivia útil para
+  charlas técnicas pero no hace falta memorizar fechas ni números de
+  revisión. Lo que sí vale la pena tener sólido es la distinción
+  notación / meta-modelo — te va a servir para entender por qué a
+  veces se dibuja "un diagrama de un diagrama" (meta-modelado).
+
+DUDAS QUE SURGIERON (y su respuesta corta)
+- Confusión: pensar que un "Parameter" es una acción que ejecuta el
+  método, y que `{ordered}` refiere al orden en que se ejecutan esas
+  acciones. Corrección: un parámetro es un DATO de entrada que el
+  método recibe, no un paso de comportamiento; `{ordered}` refiere a la
+  posición de cada parámetro en la firma (relevante para cómo Java
+  hace matching de argumentos por posición y tipo), no a la secuencia
+  de instrucciones internas del método.
+
+EJERCICIOS CREADOS: ninguno todavía (Figura 1.1 es solo preview, sin
+notación formal de diagramas de clases enseñada aún)
+PRÓXIMO PASO: seguir con la próxima tanda — el libro se encamina al
+capítulo de Class Diagrams.
+
+============================================================
+SESIÓN #08 — 2026-07-15 — Cierre meta-modelo + "UML Diagrams": los 13 tipos oficiales (Ubicación 669-685, 20-21%)
+============================================================
+
+IDEAS CLAVE
+- Cuánto importa el meta-modelo depende del modo de uso: casi nada para
+  sketchers, más para blueprinters, vital para quien usa UML as
+  programming language (define su sintaxis abstracta). A la gente que
+  desarrolla el propio estándar UML le importa sobre todo el
+  meta-modelo, la notación queda en segundo plano para ellos. Fowler
+  aclara que este libro NO es riguroso a propósito (apela a intuición,
+  coherente con su sesgo hacia sketch).
+- Arranca la sección "UML Diagrams": UML 2 define 13 tipos de diagrama
+  oficiales (Tabla 1.1), clasificados en dos familias (Figura 1.2):
+  Structure Diagram (Class, Composite Structure, Object, Component,
+  Deployment, Package) y Behavior Diagram (Activity, Use Case, State
+  Machine, e Interaction Diagram -> Sequence, Communication,
+  Interaction Overview, Timing).
+- MAPA DE RUTA DEL LIBRO (dato clave): Class Diagram es el ÚNICO tipo
+  que ocupa DOS capítulos (3 y 5) -> es el núcleo absoluto del libro y
+  del 80/20. Otros núcleos: Sequence (cap. 4), Object (cap. 6), Package
+  (cap. 7), Use Case (cap. 9), State Machine (cap. 10). Más nicho:
+  Deployment (cap. 8), Activity (cap. 11), Communication (cap. 12),
+  Composite Structure (cap. 13), Component (cap. 14), Interaction
+  Overview (cap. 16), Timing (cap. 17).
+- Los propios autores de UML no ven los diagramas como lo central de
+  UML (para ellos es el meta-modelo) -> por eso los tipos de diagrama
+  no son rígidos: se pueden usar legalmente elementos de un tipo en
+  otro: el estándar solo sugiere, no obliga.
+
+UML <-> JAVA (cómo se ve cada concepto en código)
+- Class Diagram -> las clases/interfaces que se escriben en Java.
+- Package Diagram -> mapea literal a la keyword `package` de Java:
+  agrupa clases y define dependencias entre paquetes (ej. `controller`
+  depende de `service`), igual que un `import` en código.
+- State Machine Diagram -> ciclo de vida de un objeto (ej. Pedido:
+  PENDIENTE -> ENVIADO -> ENTREGADO), típicamente un `enum` en Java.
+- Sequence Diagram -> el orden de llamadas a métodos entre objetos.
+
+NOTA DEL PROFE (cosas que el libro no dice pero importan)
+- Esta tabla es el mapa de ruta más útil de toda la guía hasta ahora:
+  ya sabemos que Class Diagram (cap. 3 y 5) es donde hay que invertir
+  más tiempo y profundidad, coherente con la regla de Pareto del
+  proyecto. El resto se puede ver con menos detalle salvo que el
+  trabajo futuro lo pida específicamente.
+
+DUDAS QUE SURGIERON (y su respuesta corta)
+- El usuario relacionó "Package Diagram" con "programación orientada a
+  objetos" en general. Se aclaró que la conexión es más puntual y
+  literal: Package Diagram mapea directo a la keyword `package` de
+  Java (organización de clases en paquetes + dependencias entre
+  paquetes), no a POO como concepto amplio.
+
+EJERCICIOS CREADOS: ninguno todavía (sigue siendo contenido de mapa/
+organización, sin notación de diagramas enseñada en profundidad aún)
+PRÓXIMO PASO: seguir con la próxima tanda — cada vez más cerca del
+Capítulo 3, Class Diagrams (núcleo del libro).
+
+============================================================
+SESIÓN #09 — 2026-07-15 — Legal UML + supresión + significado de UML + "UML no alcanza" (Ubicación 686-730, 21-23%)
+============================================================
+
+IDEAS CLAVE
+- Reglas prescriptivas (un organismo oficial dicta qué es legal, ej.
+  lenguajes de programación) vs. reglas descriptivas (se entienden por
+  cómo la gente usa el lenguaje en la práctica, ej. un idioma natural).
+  UML se comporta más como reglas descriptivas: el estándar es la
+  mayor influencia pero no la única, también cuentan las convenciones
+  de la industria y de cada equipo.
+- Terminología que Fowler usa en el resto del libro: "conventional use"
+  (uso muy difundido pero fuera del estándar) vs. "standard/normative"
+  (conforme al estándar; non-normative = no estrictamente legal en UML).
+- Principio de SUPRESIÓN (NÚCLEO): un diagrama puede ocultar info a
+  propósito (general o específicamente). Por eso nunca se puede inferir
+  nada de una AUSENCIA en un diagrama — ni siquiera si el meta-modelo
+  tiene un valor default, porque no hay forma de distinguir "es el
+  default" de "fue suprimido" solo mirando el diagrama.
+- Es más importante un buen diseño que UML "legal" si sos sketcher o
+  blueprinter (excepción: UML as programming language, ahí sí tiene
+  que ser legal o el programa no corre).
+- "El significado de UML": el estándar no define formalmente cómo UML
+  mapea a un lenguaje de programación concreto. No se puede saber el
+  código EXACTO desde un diagrama, pero sí una idea aproximada — y en
+  la práctica alcanza. Cada equipo arma sus propias convenciones de
+  mapeo diagrama->código.
+- "UML no alcanza" (NÚCLEO): la lista de tipos de diagrama de UML no es
+  exhaustiva. Si ningún diagrama UML sirve para un caso puntual, está
+  bien usar o inventar un diagrama que no sea UML. Ejemplo del libro:
+  Figura 1.3, un "screen flow diagram" informal (pantallas de una UI y
+  cómo se navega entre ellas) — ni siquiera es parte de UML, pero
+  Fowler lo usó durante años porque es útil.
+
+UML <-> JAVA (cómo se ve cada concepto en código)
+- Supresión: un diagrama de `List` puede mostrar solo `add()` y `get()`
+  sin que eso signifique que la interfaz no tiene más métodos — fueron
+  suprimidos para legibilidad, ausencia != inexistencia.
+- Screen flow diagram: útil para planear la navegación entre pantallas
+  de una app ANTES de escribir las clases Java que la implementan.
+
+NOTA DEL PROFE (cosas que el libro no dice pero importan)
+- El principio de supresión es un hábito de lectura que vas a usar
+  siempre: cuando te muestren un diagrama de clases de otro equipo,
+  nunca asumas que lo que no está dibujado no existe.
+
+DUDAS QUE SURGIERON (y su respuesta corta)
+- El usuario mezcló dos ideas del texto: por qué está bien usar un
+  diagrama no-UML (porque la lista de diagramas UML no es exhaustiva)
+  con la regla de que UML debe ser legal solo si se usa como lenguaje
+  de programación (un punto distinto, de la sección anterior). Se
+  aclaró que son dos razones independientes.
+
+EJERCICIOS CREADOS: #01 (screen flow diagram informal)
+PRÓXIMO PASO: seguir con la próxima tanda — cada vez más cerca del
+Capítulo 3, Class Diagrams (núcleo del libro).
 
 ============================================================
 FORMATO DE CADA SESIÓN (referencia para Claude — copiar y llenar)
