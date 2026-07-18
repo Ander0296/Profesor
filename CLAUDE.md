@@ -33,6 +33,29 @@ empleo como desarrollador.
   usuario ("esto es más bien contexto/nicho") en vez de darle el mismo
   peso que a un fundamento.
 
+### Mecanografía (ttyper) — REGLA PERMANENTE
+
+El usuario practica tipeo sin mirar el teclado con ttyper (atajo
+CTRL+SUPER+ALT+T en su sistema). Las frases de práctica salen de lo
+que estudia en este libro: repaso doble, dedos y memoria a la vez.
+- UN solo archivo por proyecto: MECANOGRAFIA.md (viaja por git, como
+  la guía; lo mantiene Claude). Una entrada por sesión, legible:
+  "sNN — tema:" seguido de la frase en forma natural (mismo número
+  que la sesión de GUIA-UML.md).
+- Al cerrar cada tanda, Claude agrega ahí 1-2 frases NUEVAS en
+  español (20-35 palabras, con los términos técnicos que conviene
+  fijar; en inglés entre paréntesis cuando sirvan para entrevistas,
+  igual que en la guía) y después vuelca TODAS las frases al archivo
+  de configuración de ttyper: ~/.config/ttyper/texts/uml-java.txt.
+- FORMATO OBLIGATORIO del archivo de ttyper: UNA palabra/token por
+  línea (ttyper trata cada línea como palabra indivisible y el
+  espacio salta a la siguiente palabra). En MECANOGRAFIA.md la frase
+  va natural; aplanada SOLO en el archivo de ttyper.
+- Si el archivo de ttyper no existe o quedó desactualizado (PC
+  nuevo, git pull), Claude lo regenera completo desde MECANOGRAFIA.md.
+- Las frases no se editan después (son material de repaso). Si un
+  concepto cambió o se corrigió, se agrega una frase nueva.
+
 ### Flujo por cada tanda de páginas (3-5 fotos en paginas/)
 1. Leer las imágenes que el usuario indique.
 2. "Traducción explicada": transmitir en español TODO el contenido de esas
@@ -44,9 +67,11 @@ empleo como desarrollador.
 4. Verificar comprensión con 1-2 preguntas cortas antes de cerrar el tema.
 5. Actualizar GUIA-UML.md agregando la sesión (respetar el formato del
    archivo) y sumar términos nuevos a la tabla de vocabulario.
-6. Si el tema lo amerita, agregar ejercicios a EJERCICIOS.md con su
+6. Agregar 1-2 frases de la sesión a MECANOGRAFIA.md y volcar todas
+   aplanadas al archivo de ttyper (ver regla de mecanografía).
+7. Si el tema lo amerita, agregar ejercicios a EJERCICIOS.md con su
    formato, siempre con la referencia "Si te trabás: revisá la Sesión #Y de GUIA-UML.md".
-7. Guardar en Engram los conceptos clave, decisiones y última página vista.
+8. Guardar en Engram los conceptos clave, decisiones y última página vista.
 
 ### Reglas de trabajo
 - El usuario escribe TODO el código Java a mano en ejercicios/ (está
@@ -67,6 +92,8 @@ empleo como desarrollador.
 - paginas/       → fotos del libro (input del usuario, NO subir a git)
 - ejercicios/    → código Java del usuario, una carpeta por ejercicio
 - diagramas/     → diagramas PlantUML (.puml) del usuario para revisión
+- MECANOGRAFIA.md → frases de tipeo por sesión (mantiene Claude y
+  las vuelca al archivo de ttyper; las practica el usuario)
 
 ### Memoria y contexto
 - Engram: el project es "UML-Java" (basename de esta carpeta, NO inventar

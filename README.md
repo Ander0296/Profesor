@@ -149,7 +149,9 @@ Tanda nueva: leé todas las imágenes que hay en la raíz de paginas/
 (sin entrar a paginas/leidas/), en orden de nombre, y arrancá el flujo.
 Cuando termines de explicarme esta tanda, antes de seguir con cualquier
 otra cosa, mové esas mismas imágenes a paginas/leidas/ para que la raíz
-quede vacía.
+quede vacía, agregá las frases de esta tanda a MECANOGRAFIA.md y volcá
+todas las frases aplanadas al archivo de ttyper (regla de mecanografía
+de CLAUDE.md).
 ```
 
 --- MENSAJE 4 — corregir un ejercicio ---
@@ -164,8 +166,9 @@ corrección en EJERCICIOS.md.
 
 ```
 Cerramos acá:
-1. Verificá que GUIA-UML.md y EJERCICIOS.md quedaron actualizados con
-   todo lo de hoy.
+1. Verificá que GUIA-UML.md, EJERCICIOS.md y MECANOGRAFIA.md quedaron
+   actualizados con todo lo de hoy (y que el archivo de ttyper tenga
+   todas las frases).
 2. Guardá en Engram (project "UML-Java") el resumen y en qué página
    quedamos.
 3. Dame el resumen final de la sesión.
