@@ -16,6 +16,27 @@ Cada paso dice dónde va. Los MENSAJES están al final del archivo.
 - diagramas/       → mis diagramas .puml
 - GUIA-UML.md      → la guía (la escribe Claude)
 - EJERCICIOS.md    → los ejercicios (los escribe Claude)
+- MECANOGRAFIA.md  → frases de tipeo por sesión (las anota Claude y
+  las vuelca al archivo de ttyper; yo las practico)
+- ANKI.txt         → tarjetas de repaso 80/20 (las crea Claude; yo
+  las importo en Anki)
+
+## Cómo uso la mecanografía y las tarjetas Anki
+
+Mecanografía (las frases salen de MECANOGRAFIA.md):
+- CTRL+SUPER+ALT+T (atajo de mis dotfiles) abre/oculta ttyper
+  flotante con una frase al azar de mis proyectos de estudio.
+- Al terminar una frase: q pasa a otra frase al azar, r repite la
+  misma. Claude vuelca las frases nuevas al cerrar cada tanda; yo
+  no toco esos archivos.
+
+Tarjetas Anki (ANKI.txt):
+- En Anki: Archivo → Importar → elegir el ANKI.txt de este repo. El
+  mazo (UML-Java), el separador tab y las etiquetas ya vienen
+  preconfigurados en las cabeceras del propio archivo.
+- Re-importar el MISMO archivo no duplica: actualiza las tarjetas
+  que cambiaron y agrega las nuevas (Anki matchea por la pregunta).
+- Rutina: después de cada git pull con tarjetas nuevas, re-importo.
 
 ============================================================
 PRIMERA VEZ EN LA VIDA (sesión uml-s01)
@@ -151,7 +172,8 @@ Cuando termines de explicarme esta tanda, antes de seguir con cualquier
 otra cosa, mové esas mismas imágenes a paginas/leidas/ para que la raíz
 quede vacía, agregá las frases de esta tanda a MECANOGRAFIA.md y volcá
 todas las frases aplanadas al archivo de ttyper (regla de mecanografía
-de CLAUDE.md).
+de CLAUDE.md), y agregá las tarjetas 80/20 de esta tanda a ANKI.txt
+(regla de tarjetas Anki de CLAUDE.md).
 ```
 
 --- MENSAJE 4 — corregir un ejercicio ---
@@ -166,9 +188,10 @@ corrección en EJERCICIOS.md.
 
 ```
 Cerramos acá:
-1. Verificá que GUIA-UML.md, EJERCICIOS.md y MECANOGRAFIA.md quedaron
-   actualizados con todo lo de hoy (y que el archivo de ttyper tenga
-   todas las frases).
+1. Verificá que GUIA-UML.md, EJERCICIOS.md, MECANOGRAFIA.md y
+   ANKI.txt quedaron actualizados con todo lo de hoy (que el archivo
+   de ttyper tenga todas las frases, y que las tarjetas nuevas sean
+   autocontenidas).
 2. Guardá en Engram (project "UML-Java") el resumen y en qué página
    quedamos.
 3. Dame el resumen final de la sesión.

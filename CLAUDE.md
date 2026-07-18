@@ -56,6 +56,32 @@ que estudia en este libro: repaso doble, dedos y memoria a la vez.
 - Las frases no se editan después (son material de repaso). Si un
   concepto cambió o se corrigió, se agrega una frase nueva.
 
+### Tarjetas Anki — REGLA PERMANENTE
+
+El usuario repasa con Anki (app externa). Las tarjetas las crea
+Claude aplicando el Pareto 80/20: SOLO los conceptos que más valor
+aportan al objetivo (primer empleo Java/POO), no todo el libro —
+pocas tarjetas buenas fijan más que un mazo exhaustivo.
+- UN solo archivo por proyecto: ANKI.txt (viaja por git; lo mantiene
+  Claude). El usuario lo importa en Anki cuando quiere: re-importar
+  ACTUALIZA las tarjetas existentes (Anki matchea por la pregunta,
+  el primer campo) y agrega las nuevas, sin duplicar.
+- Formato: cabeceras #separator:tab, #html:false, #deck:UML-Java y
+  #tags:uml-java; después una tarjeta por línea:
+  pregunta TAB respuesta.
+- Con tabulador como separador, las comillas dobles y los punto y
+  coma del código Java van LITERALES, sin escapar (jamás
+  ""dobladas""). Regla dura: ni pregunta ni respuesta contienen tabs
+  ni saltos de línea, y ninguna empieza con comillas.
+- Cada tarjeta es AUTOCONTENIDA: prohibido "según el libro", "en la
+  página X", "como vimos en la sesión Y". Cualquier persona debe
+  poder estudiarla sin conocer UML Distilled ni este proyecto.
+- Al cerrar cada tanda, Claude agrega las tarjetas 80/20 de la
+  sesión (2-5 por tanda: las mejores, no todas las posibles).
+- La PREGUNTA nunca se reformula después (es la clave de matcheo en
+  Anki). Si una respuesta quedó mal o vieja, se corrige la respuesta
+  dejando la pregunta idéntica.
+
 ### Flujo por cada tanda de páginas (3-5 fotos en paginas/)
 1. Leer las imágenes que el usuario indique.
 2. "Traducción explicada": transmitir en español TODO el contenido de esas
@@ -69,9 +95,11 @@ que estudia en este libro: repaso doble, dedos y memoria a la vez.
    archivo) y sumar términos nuevos a la tabla de vocabulario.
 6. Agregar 1-2 frases de la sesión a MECANOGRAFIA.md y volcar todas
    aplanadas al archivo de ttyper (ver regla de mecanografía).
-7. Si el tema lo amerita, agregar ejercicios a EJERCICIOS.md con su
+7. Agregar las tarjetas 80/20 de la sesión a ANKI.txt (ver regla de
+   tarjetas Anki: autocontenidas, tab, 2-5 por tanda).
+8. Si el tema lo amerita, agregar ejercicios a EJERCICIOS.md con su
    formato, siempre con la referencia "Si te trabás: revisá la Sesión #Y de GUIA-UML.md".
-8. Guardar en Engram los conceptos clave, decisiones y última página vista.
+9. Guardar en Engram los conceptos clave, decisiones y última página vista.
 
 ### Reglas de trabajo
 - El usuario escribe TODO el código Java a mano en ejercicios/ (está
@@ -94,6 +122,8 @@ que estudia en este libro: repaso doble, dedos y memoria a la vez.
 - diagramas/     → diagramas PlantUML (.puml) del usuario para revisión
 - MECANOGRAFIA.md → frases de tipeo por sesión (mantiene Claude y
   las vuelca al archivo de ttyper; las practica el usuario)
+- ANKI.txt → tarjetas de repaso 80/20 (mantiene Claude; el usuario
+  las importa en Anki)
 
 ### Memoria y contexto
 - Engram: el project es "UML-Java" (basename de esta carpeta, NO inventar

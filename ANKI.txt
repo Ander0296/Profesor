@@ -1,0 +1,12 @@
+#separator:tab
+#html:false
+#deck:UML-Java
+#tags:uml-java
+¿Qué es UML y quién lo estandariza?	UML (Unified Modeling Language) es una familia de notaciones gráficas para describir y diseñar sistemas de software, especialmente los orientados a objetos. Es un estándar mantenido por la OMG (Object Management Group).
+¿Cuáles son los tres modos de usar UML según Martin Fowler?	Como sketch (boceto): diagramas informales y descartables para comunicar una idea; como blueprint (plano): diagramas completos para que otro implemente a partir de ellos; y como programming language: el diagrama ES el programa. El modo más común y útil en la práctica es sketch.
+¿Qué diferencia hay entre forward engineering y reverse engineering con UML?	Forward engineering: dibujar el diagrama ANTES de escribir el código, para guiar el diseño. Reverse engineering: generar el diagrama DESDE código ya existente, para entenderlo. Ambos se pueden hacer en modo sketch o en modo blueprint.
+¿Qué diferencia hay entre la notación y el meta-modelo de UML?	La notación es la sintaxis gráfica: lo que dibujás en el diagrama. El meta-modelo es la definición formal que dice qué significa cada elemento y cómo se relaciona con los demás. Para usar UML como boceto alcanza con dominar la notación.
+¿Cuántos tipos oficiales de diagramas define UML 2 y cuál es el más importante en la práctica?	UML 2 define trece tipos oficiales, repartidos entre diagramas de estructura y de comportamiento. El diagrama de clases (class diagram) es por lejos el más usado: muestra clases, atributos, operaciones y las relaciones entre clases.
+¿Qué significa suprimir elementos en un diagrama UML?	Ocultar lo que no aporta a esa vista: que un atributo u operación no esté dibujado NO significa que no exista en la clase real, solo que no importa para lo que ese diagrama quiere comunicar. Un buen diagrama comunica una idea, no lo muestra todo.
+¿Hay que seguir el estándar UML al pie de la letra al dibujar un diagrama?	Depende del modo: en blueprint conviene ser estricto porque otro va a implementar desde ahí, pero en sketch lo importante es comunicar — desviarse un poco de lo "legal" (lo que el estándar permite) es aceptable si el equipo lo entiende.
+¿UML alcanza por sí solo para diseñar y documentar software?	No. UML es útil pero no cubre todo: se complementa con otras técnicas como texto explicativo, tablas o prototipos. La meta es entender y comunicar el diseño, no producir diagramas por producirlos.
