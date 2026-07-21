@@ -17,7 +17,7 @@ Cada paso dice dónde va. Los MENSAJES están al final del archivo.
 - GUIA-UML.md      → la guía (la escribe Claude)
 - EJERCICIOS.md    → los ejercicios (los escribe Claude)
 - MECANOGRAFIA.md  → frases de tipeo por sesión (las anota Claude y
-  las vuelca al archivo de ttyper; yo las practico)
+  las vuelca a los archivos de ttyper; yo las practico)
 - ANKI.txt         → tarjetas de repaso 80/20 (las crea Claude; yo
   las importo en Anki)
 
@@ -171,7 +171,7 @@ Tanda nueva: leé todas las imágenes que hay en la raíz de paginas/
 Cuando termines de explicarme esta tanda, antes de seguir con cualquier
 otra cosa, mové esas mismas imágenes a paginas/leidas/ para que la raíz
 quede vacía, agregá las frases de esta tanda a MECANOGRAFIA.md y volcá
-todas las frases aplanadas al archivo de ttyper (regla de mecanografía
+cada frase aplanada a su propio archivo de ttyper (regla de mecanografía
 de CLAUDE.md), y agregá las tarjetas 80/20 de esta tanda a ANKI.txt
 (regla de tarjetas Anki de CLAUDE.md).
 ```
@@ -189,8 +189,8 @@ corrección en EJERCICIOS.md.
 ```
 Cerramos acá:
 1. Verificá que GUIA-UML.md, EJERCICIOS.md, MECANOGRAFIA.md y
-   ANKI.txt quedaron actualizados con todo lo de hoy (que el archivo
-   de ttyper tenga todas las frases, y que las tarjetas nuevas sean
+   ANKI.txt quedaron actualizados con todo lo de hoy (que cada frase
+   tenga su archivo de ttyper, y que las tarjetas nuevas sean
    autocontenidas).
 2. Guardá en Engram (project "UML-Java") el resumen y en qué página
    quedamos.
