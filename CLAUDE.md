@@ -96,8 +96,11 @@ pocas tarjetas buenas fijan más que un mazo exhaustivo.
 3. Conectar cada concepto UML con Java: ejemplo mínimo de código en el
    chat, con comentario // en CADA línea relevante.
 4. Verificar comprensión con 1-2 preguntas cortas antes de cerrar el tema.
-5. Actualizar GUIA-UML.md agregando la sesión (respetar el formato del
-   archivo) y sumar términos nuevos a la tabla de vocabulario.
+5. Actualizar GUIA-UML.md agregando la sesión en FORMATO CORTO (5-8
+   bullets, SIN bloques de código ni diagramas, máx ~15 líneas — el
+   contenido ya vive en el chat, el libro y los ejercicios; ver el
+   formato de referencia al final de la guía) y sumar términos nuevos
+   a la tabla de vocabulario.
 6. Agregar 1-2 frases CORTAS de la sesión a MECANOGRAFIA.md y volcar
    cada una aplanada a su propio archivo de ttyper (ver regla de
    mecanografía).
@@ -121,7 +124,11 @@ pocas tarjetas buenas fijan más que un mazo exhaustivo.
   en la guía como "NOTA DEL PROFE".
 
 ### Estructura del proyecto
-- GUIA-UML.md    → guía por sesiones (mantiene Claude)
+- GUIA-UML.md    → guía activa: INICIO RÁPIDO + vocabulario + sesiones
+  nuevas en formato corto (mantiene Claude)
+- GUIA-ARCHIVO.md → sesiones históricas #01-#09 en formato largo.
+  NO se lee al inicio de sesión: solo consulta puntual para
+  RE-ESTUDIO o si el usuario pide releer una sesión vieja
 - EJERCICIOS.md  → ejercicios con estado (mantiene Claude)
 - paginas/       → fotos del libro (input del usuario, NO subir a git)
 - ejercicios/    → código Java del usuario, una carpeta por ejercicio
@@ -135,7 +142,10 @@ pocas tarjetas buenas fijan más que un mazo exhaustivo.
 - Engram: el project es "UML-Java" (basename de esta carpeta, NO inventar
   otro nombre).
 - Al inicio de cada sesión nueva: buscar en Engram el progreso previo y
-  leer GUIA-UML.md + EJERCICIOS.md antes de avanzar.
+  leer SOLO el INICIO RÁPIDO de GUIA-UML.md (primeras ~15 líneas, con
+  Read limit) + EJERCICIOS.md antes de avanzar. NUNCA leer GUIA-UML.md
+  completa ni GUIA-ARCHIVO.md al inicio — regla de ahorro de
+  contexto/créditos.
 - Al final de cada sesión: resumen de lo aprendido + guardar en Engram.
 - CodeGraph: NO activo todavía (proyecto con poco código). Reevaluar
   cuando ejercicios/ supere ~10 archivos .java; en ese momento el usuario

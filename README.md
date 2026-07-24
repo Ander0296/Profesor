@@ -157,7 +157,8 @@ ARRANQUE DE HOY
 --- MENSAJE 2 — arranque del día (s02 en adelante) ---
 
 ```
-Nueva sesión de estudio. Leé CLAUDE.md, GUIA-UML.md y EJERCICIOS.md, buscá
+Nueva sesión de estudio. Leé CLAUDE.md, el INICIO RÁPIDO de GUIA-UML.md
+(solo esa sección, no toda la guía) y EJERCICIOS.md, buscá
 en Engram (project "UML-Java") dónde quedamos, y decime: (1) qué vimos la
 última vez en una línea, (2) qué ejercicios tengo pendientes, (3) qué toca
 hoy. Después decido si corregimos un ejercicio o te paso la siguiente tanda.
